@@ -1,8 +1,28 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 2em;
 }
 
 a {
   color: #00B7FF;
+}
+
+input {
+  border: none;
+border-bottom: 1px dashed black;
+    width: 90%;
+}
+
+html input[type=button]{
+  border: none;
+      width: 100%;
+      background: lightgreen;
+      margin-top: 10px;
+}
+
+#footer{
+  color: #ccc;
+  font-size: 0.7em;
+  margin-top: 10px;
 }

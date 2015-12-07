@@ -1,0 +1,54 @@
+<h1>UserStory MVP</h1>
+ <div class="form-group">
+<p>
+As a <input id='role_field'  type="text" value="" placeholder="role" required>, <br>
+</p>
+<p>
+  I want to <input id='action_field'  type="text" value="" placeholder="do something" required> <br>
+</p>
+<p>
+so that <input id='problem_field'  type="text" value="" placeholder="reason/benefit" required> <br>  
+</p>
+
+
+<input type='button' id='search' value='Tell a story'>
+</div>
+<div id="info">
+  &nbsp;
+  <!-- As a [role], I want to [do something] so that [reason/benefit] -->
+</div>
+
+<script>
+
+//search
+var search_value="";
+
+
+$('#search').click(function(d){
+d.preventDefault();
+role_value = $('#role_field').val();
+console.log(role_value);
+action_value = $('#action_field').val();
+console.log(action_value);
+problem_value = $('#problem_field').val();
+console.log(problem_value);
+if (role_value.length==0 || problem_value.length==0 || action_value.length==0 ) {
+  console.log("problem");
+  $('#info')
+    .attr("class","has-error")
+   .html("Please fill all required data");
+}
+else {
+  $('#info')
+   .html("As a " + role_value  + ", I want to "+ action_value+ " so that " + problem_value);
+}
+
+});
+
+ $('#role_field, #action_field, #problem_field').keypress(function(e){
+    if(e.which == 13){//Enter key pressed
+        $('#search').click();//Trigger search button click event
+        console.log("click");
+    }
+});
+</script>
